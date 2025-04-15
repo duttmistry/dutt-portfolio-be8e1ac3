@@ -7,28 +7,28 @@ export const About = () => {
     {
       icon: Layout,
       title: "Frontend Development",
-      description: "Creating responsive and intuitive user interfaces with React and modern CSS frameworks."
+      description: "Crafting responsive and intuitive user interfaces using React and modern web technologies."
     },
     {
       icon: Database,
       title: "Backend Development",
-      description: "Building robust server-side applications and RESTful APIs."
+      description: "Developing robust server-side applications and scalable RESTful APIs."
     },
     {
       icon: Code2,
       title: "Full Stack Integration",
-      description: "Seamlessly connecting frontend and backend for complete web solutions."
+      description: "Seamlessly connecting frontend and backend to create comprehensive web solutions."
     }
   ];
 
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">About Me</h2>
+        <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">About Dutt</h2>
         <div className="max-w-3xl mx-auto text-center mb-12">
           <p className="text-gray-600 text-lg">
-            A passionate full stack developer with expertise in building modern web applications.
-            I specialize in creating seamless user experiences and robust backend solutions.
+            A passionate full stack developer with a keen eye for creating innovative web applications. 
+            I specialize in building efficient, scalable solutions that bridge design and functionality.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
@@ -50,3 +50,4 @@ export const About = () => {
     </section>
   );
 };
+
