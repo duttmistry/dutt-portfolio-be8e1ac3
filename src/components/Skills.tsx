@@ -1,4 +1,6 @@
 
+import { motion } from "framer-motion";
+
 export const Skills = () => {
   const skills = {
     "Frontend": ["React", "TypeScript", "Tailwind CSS", "Redux", "Next.js"],
@@ -8,24 +10,45 @@ export const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">Skills & Technologies</h2>
+    <section id="skills" className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative">
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,#80808012_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_40%,transparent_100%)]" />
+      <div className="container mx-auto px-4 relative">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-center bg-gradient-to-r from-blue-900 to-purple-800 bg-clip-text text-transparent mb-12"
+        >
+          Skills & Technologies
+        </motion.h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {Object.entries(skills).map(([category, items]) => (
-            <div key={category} className="p-6 bg-gray-50 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-blue-900">{category}</h3>
+          {Object.entries(skills).map(([category, items], categoryIndex) => (
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+              viewport={{ once: true }}
+              className="p-6 bg-white/80 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <h3 className="text-xl font-semibold mb-4 bg-gradient-to-r from-blue-900 to-purple-800 bg-clip-text text-transparent">{category}</h3>
               <div className="flex flex-wrap gap-2">
-                {items.map((skill) => (
-                  <span
+                {items.map((skill, index) => (
+                  <motion.span
                     key={skill}
-                    className="px-3 py-1 bg-white text-sm text-gray-600 rounded-full border border-gray-200"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                    className="px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-sm text-gray-700 rounded-full border border-gray-200 shadow-sm"
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
